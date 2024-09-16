@@ -1,0 +1,39 @@
+.homepage {
+    height: 100vh;
+    background-image: url('../img/NewYorkView.jpg');  /* Use a URL or local image */
+    background-size: cover;  /* Cover ensures the background image takes up the full viewport */
+    background-position: center;  /* Centers the background image */
+    background-repeat: no-repeat;  /* Prevents repeating background images */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;  /* Set text color to contrast with the background */
+    text-align: center;
+  }
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);  /* Dark overlay */
+  z-index: 1;
+}
+
+p {
+  z-index: 2;  /* Ensures content is above the overlay */
+  position: fixed;   /* Fixed position */
+  top: 70px;
+  left: 300px;
+
+}
+
+h1 {
+  z-index: 2;  /* Ensures content is above the overlay */
+  position: fixed;   /* Fixed position */
+  top: 10px;
+
+}
+  

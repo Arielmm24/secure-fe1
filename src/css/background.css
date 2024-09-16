@@ -1,0 +1,28 @@
+.background{
+    height: 100vh;
+    background-image: url('../img/NewYorkView.jpg');  /* Use a URL or local image */
+    background-size: cover;  /* Cover ensures the background image takes up the full viewport */
+    background-position: center;  /* Centers the background image */
+    background-repeat: no-repeat;  /* Prevents repeating background images */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.logo{
+    background-image: url('../img/logo.webp');  /* Use a URL or local image */
+    background-size: cover;  /* Cover ensures the background image takes up the full viewport */
+    background-position: center;  /* Centers the background image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    padding: 10px;
+    z-index: 1000;
+  }
