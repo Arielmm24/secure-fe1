@@ -1,5 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 export default function AboutPage() {
-    return (0)
+    useEffect(() => {
+        alert('Alert executed!');
+    }, []); // Empty dependency array to run the effect once on mount
+
+    return (
+        <div>
+            <h1>About Page</h1>
+        </div>
+    );
 }

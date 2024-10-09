@@ -21,6 +21,25 @@ export const createUser = async (userName,password,email,phoneNumber) => {
   }
 };
 
+export const login = async (userName, password) => {
+  try {
+    const response = await axios.post('http://localhost:8080/login', {
+      userName,
+      password
+    })
+    const { data } = response
+    if( data.message === '"Object(s) Read Successfully"'){
+      return data.response;
+    } else {
+        return undefined
+    }
+  } catch (error){
+    console.error("Error fetching user", error);
+    return (0)
+  }
+
+} 
+
 // Read (GET)
 export const getUsers = async () => {
   try {
@@ -32,9 +51,9 @@ export const getUsers = async () => {
   }
 };
 // Read (GET) by username
-export const getUser = async (name) => {
+export const getUser = async (name,password) => {
   try {
-    const response = await axios.get(`${API_URL}/${name}`);
+    const response = await axios.get(`${API_URL}/${name}/${password}`);
     const { data } = response
     if( data.message === '"Object(s) Read Successfully"'){
       return data.response;

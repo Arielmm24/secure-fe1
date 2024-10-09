@@ -6,6 +6,8 @@ import { addCustomer } from '../utils/customerCrud'
 import { useNavigate } from 'react-router-dom';
 export default function AddNewClient() {
 
+    const divRef = React.useRef(null)
+
     const handleSubmit = (event) => {
         event.preventDefault();
     }
@@ -18,6 +20,7 @@ export default function AddNewClient() {
     const handleAdd = async ()=>{
         try {
             console.log('props : ' , name, ' ' ,number,' ' , amount, ' ', user)
+            divRef.current.innerHTML = name
             const response = await addCustomer(name,number,amount,user)
             if(response){
                 console.log('new client created , name:',name)
@@ -54,6 +57,7 @@ export default function AddNewClient() {
                 <br></br>
                 <br></br><br></br>
                 <button type="button" className="button" onClick={handleAdd} ><b>Add</b></button>
+                <div ref={divRef}></div>
             </form>
         </div>
     </div></div>

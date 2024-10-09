@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 
 import CustomersList from './CustomersList';
-import { getUsers, getUser, createUser} from '../utils/userCrud.js'
+import { getUsers, getUser, createUser,login} from '../utils/userCrud.js'
 import { succesToaster, infoToaster} from '../utils/globalStyle.js'
 // import { errorToaster, infoToaster, succesToaster } from '../utils/globalStyle.js'
 import 'react-toastify/dist/ReactToastify.css';
@@ -52,7 +52,7 @@ export default function ButtonUsage() {
     
     const handleClick = async () =>{
         // console.log(data.current.value , 'is logged')
-        const response = await getUser(userName);
+        const response = await login(userName, password);
         if (response === undefined){
             console.log( `User ${userName} is connected`)
             localStorage.setItem('user', userName)
